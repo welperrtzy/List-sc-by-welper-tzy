@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SC Welper</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: url('https://files.catbox.moe/na0in6.jpg') no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Orbitron', sans-serif;
+        color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .container {
+        padding: 20px;
+        max-width: 500px;
+        margin: auto;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .logo {
+        width: 150px;
+        margin: 20px auto;
+    }
+    h1 {
+        font-size: 28px;
+        text-shadow: 2px 2px 5px black;
+        margin: 5px 0;
+    }
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 15px;
+        text-shadow: 1px 1px 3px black;
+    }
+    .button-list {
+        flex: 1;
+        overflow-y: auto;
+        padding-right: 5px;
+    }
+    .sc-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255,255,255,0.1);
+        border-radius: 30px;
+        padding: 10px 20px;
+        margin: 10px auto;
+        width: 90%;
+        backdrop-filter: blur(5px);
+    }
+    .sc-name {
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+    .install-btn {
+        background: linear-gradient(to right, #000000, #00ff66);
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .install-btn:hover {
+        background: linear-gradient(to right, #00ff66, #000000);
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>ALL REVIEW LINK SC BY WELPER-TZY</h1>
+        <img src="https://files.catbox.moe/s6oorp.png" alt="Logo" class="logo">
+        <h1>WELCOME TO</h1>
+        <div class="subtitle">Silahkan Install SC nya dan pakai, tapi jangan lupa SUBSCRIBE!</div>
+
+        <div class="button-list" id="scList"></div>
+    </div>
+
+<script>
+    // Data SC (edit di sini)
+    const data = [
+        { name: "SC KIYAMI MD", link: "https://www.mediafire.com/file/qkkeyvr3l02sp72/Raiden_Shogun_Kyami.zip/file" },
+        { name: "SC CHANGLI MD", link: "https://www.mediafire.com/file/jk0b8wvtoa5hwph/Changli_MD_%2528Safefilekku%2529.zip/file" },
+        { name: "SC WELPER 3", link: "https://example.com/3" },
+        { name: "SC WELPER 4", link: "https://example.com/4" },
+        { name: "SC WELPER 5", link: "https://example.com/5" },
+        { name: "SC WELPER 6", link: "https://example.com/6" },
+        { name: "SC WELPER 7", link: "https://example.com/7" }
+    ];
+
+    const scList = document.getElementById('scList');
+
+    data.forEach(item => {
+        const row = document.createElement('div');
+        row.classList.add('sc-row');
+
+        const name = document.createElement('div');
+        name.classList.add('sc-name');
+        name.textContent = item.name;
+
+        const btn = document.createElement('a');
+        btn.classList.add('install-btn');
+        btn.href = item.link;
+        btn.textContent = 'INSTALL';
+        btn.target = "_blank";
+
+        row.appendChild(name);
+        row.appendChild(btn);
+        scList.appendChild(row);
+    });
+</script>
+</body>
+</html>
